@@ -1,0 +1,34 @@
+<launch>
+  <include file="$(find fitplane)/launch/launch/world.launch">
+    <arg name="world_name" value="scene_3"/>
+  </include>
+  <include file="$(find scout_gazebo_sim)/launch/spawn_scout_v2.launch">
+    <arg name="x" value="-18"/>
+    <arg name="y" value="-20"/>
+    <arg name="z" value="0.5"/>
+  </include>
+
+  <node name="slam_sim_output" pkg="sensor_conversion" type="slam_sim_output_node" output="log">
+    <remap from="/odometry_init" to="/laser_odom_init"/>
+    <remap from="/registered_scan" to="/registered_point_cloud"/>
+    <remap from="/odometry" to="base_pose_ground_truth"/>
+    <remap from="/point_cloud" to="velodyne_points"/>
+    <param name="frame_id" value="map"/>
+    <param name="child_frame_id" value="sensor"/>
+    <param name="down_voxel_size" value="0.1"/>
+    <param name="use_sim_time" value="true"/>
+  </node>
+
+  <node pkg="tf" type="static_transform_publisher" name="map_to_world" args="0 0 0 0 0 0 /world /map 100" />
+  <node pkg="tf" type="static_transform_publisher" name="sensor_baselink" args="0 0 -0.3 0 0 0 /sensor /base_link 100" />
+
+  <node pkg="fitplane" type="Traversibility_mapping" name="Traversibility_mapping" output="screen" required = "true">
+    <param name="PointCloud_Map_topic" value="/registered_point_cloud"/>
+    <param name="Grid_Map_topic" value="/grid_map"/>
+  </node>
+
+  <node name="demo" pkg="rviz" type="rviz" args="-d $(find simworld)/launch/demo.rviz">
+  </node>
+
+</launch>
+

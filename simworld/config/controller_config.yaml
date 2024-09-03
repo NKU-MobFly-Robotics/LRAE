@@ -1,0 +1,45 @@
+racebot:
+# controls the rear two tires based on individual motors
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 100
+  right_rear_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: right_rear_wheel_joint
+  left_front_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: left_front_wheel_joint
+  right_front_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: right_front_wheel_joint
+  left_rear_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: left_rear_wheel_joint
+  right_front_steering_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: right_steering_hinge_joint
+    pid: {p: 2.0, i: 0.5, d: 0.5}
+  left_front_steering_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: left_steering_hinge_joint
+    pid: {p: 2.0, i: 0.5, d: 0.5}  
+  gazebo_ros_control:
+    pid_gains:
+      left_front_wheel_joint:
+        p: 1.0
+        i: 0.2
+        d: 0
+      right_front_wheel_joint:
+        p: 1.0
+        i: 0.2
+        d: 0
+      left_rear_wheel_joint:
+        p: 1.0
+        i: 0.2
+        d: 0
+      right_rear_wheel_joint:
+        p: 1.0
+        i: 0.2
+        d: 0
+

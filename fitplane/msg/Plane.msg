@@ -1,0 +1,2 @@
+float64 PlaneCellHeight
+float64 PlaneCellAngle

@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+  <model name="map_yewai">
+    <static>true</static>
+    <link name="map_link">
+      <pose>0 0 -0 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://map_xingxing/meshes/map_xingxing.dae</uri>
+            <scale>1.5 1.5 1.3</scale>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://map_xingxing/meshes/map_xingxing.dae</uri>
+            <scale>1.5 1.5 1.3</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://map_xingxing/materials/scripts/map.material</uri>
+            <uri>model://map_xingxing/materials/textures/texture.jpg</uri>
+            <name>map_xingxing/Image</name>
+          </script>
+        </material>
+      </visual>
+      <surface> 
+        <friction>
+          <ode>
+              <mu>99999999.0</mu>
+              <mu2>99999999.0</mu2>
+              <fdir1>0 0 0</fdir1>
+              <slip1>0</slip1>
+              <slip2>0</slip2>
+          </ode>
+        </friction>
+      </surface>
+    </link>
+
+  </model>
+</sdf>
