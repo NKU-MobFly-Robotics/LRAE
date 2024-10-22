@@ -125,20 +125,19 @@ void mapMerge()
                         else if(globalMapData.data[ix + iy * globalMapData.info.width] < 90 && globalMapData.data[ix + iy * globalMapData.info.width] >=0)
                         {
                             if(mapData.data[i + j * mapData.info.width] != -1)
-                            globalMapData.data[ix + iy * globalMapData.info.width] = 
-                                (int)(0.2 * (double)(globalMapData.data[ix + iy * globalMapData.info.width]) + 
+                                globalMapData.data[ix + iy * globalMapData.info.width] = 
+                                    (int)(0.2 * (double)(globalMapData.data[ix + iy * globalMapData.info.width]) + 
                                     0.8 * (double)(mapData.data[i + j * mapData.info.width]));
                         }
                         else
                         {
                             if(abs(px - ego_position_.x) >= safe_obs_dis || abs(py - ego_position_.y) >= safe_obs_dis)
                             {
-                                if(mapData.data[i + j * mapData.info.width] < 119
-                                  && globalMapData.data[ix + iy * globalMapData.info.width] < 119) 
+                                if(mapData.data[i + j * mapData.info.width] < 119 && globalMapData.data[ix + iy * globalMapData.info.width] < 119) 
                                 {
                                     if(mapData.data[i + j * mapData.info.width] != -1)
-                                    globalMapData.data[ix + iy * globalMapData.info.width] = 
-                                        (int)(0.2 * (double)(globalMapData.data[ix + iy * globalMapData.info.width]) + 
+                                        globalMapData.data[ix + iy * globalMapData.info.width] = 
+                                            (int)(0.2 * (double)(globalMapData.data[ix + iy * globalMapData.info.width]) + 
                                             0.8 * (double)(mapData.data[i + j * mapData.info.width]));
                                 }
                                 else
@@ -146,12 +145,12 @@ void mapMerge()
                             }
                             else
                             {
-                                if(mapData.data[i + j * mapData.info.width] < 119
-                                  && globalMapData.data[ix + iy * globalMapData.info.width] < 119) 
+                                if(mapData.data[i + j * mapData.info.width] < 119 && globalMapData.data[ix + iy * globalMapData.info.width] < 119) 
                                 {
                                     if(mapData.data[i + j * mapData.info.width] != -1)
-                                               globalMapData.data[ix + iy * globalMapData.info.width]= (int)(0.96 * (double)(globalMapData.data[ix + iy * globalMapData.info.width]) + 
-                                                    0.04 * (double)(mapData.data[i + j * mapData.info.width]));
+                                        globalMapData.data[ix + iy * globalMapData.info.width] = 
+                                            (int)(0.96 * (double)(globalMapData.data[ix + iy * globalMapData.info.width]) + 
+                                            0.04 * (double)(mapData.data[i + j * mapData.info.width]));
                                 }
                                 else
                                     globalMapData.data[ix + iy * globalMapData.info.width] = 100;
@@ -171,20 +170,19 @@ void mapMerge()
                         else if(globalMapData.data[ix + iy * globalMapData.info.width] < 90 && globalMapData.data[ix + iy * globalMapData.info.width] >=0)
                         {
                             if(mapData.data[i + j * mapData.info.width] != -1)
-                            globalMapData.data[ix + iy * globalMapData.info.width] = 
-                                (int)(0.2 * (double)(globalMapData.data[ix + iy * globalMapData.info.width]) + 
+                                globalMapData.data[ix + iy * globalMapData.info.width] = 
+                                    (int)(0.2 * (double)(globalMapData.data[ix + iy * globalMapData.info.width]) + 
                                     0.8 * (double)(mapData.data[i + j * mapData.info.width]));
                         }
                         else
                         {
                             if(abs(px - ego_position_.x) >= safe_obs_dis || abs(py - ego_position_.y) >= safe_obs_dis)
                             {
-                                if(mapData.data[i + j * mapData.info.width] < 119
-                                  && globalMapData.data[ix + iy * globalMapData.info.width] < 119) 
+                                if(mapData.data[i + j * mapData.info.width] < 119 && globalMapData.data[ix + iy * globalMapData.info.width] < 119) 
                                 {
                                     if(mapData.data[i + j * mapData.info.width] != -1)
-                                    globalMapData.data[ix + iy * globalMapData.info.width] = 
-                                        (int)(0.2 * (double)(globalMapData.data[ix + iy * globalMapData.info.width]) + 
+                                        globalMapData.data[ix + iy * globalMapData.info.width] = 
+                                            (int)(0.2 * (double)(globalMapData.data[ix + iy * globalMapData.info.width]) + 
                                             0.8 * (double)(mapData.data[i + j * mapData.info.width]));
                                 }
                                 else
@@ -192,12 +190,12 @@ void mapMerge()
                             }
                             else
                             {
-                                if(mapData.data[i + j * mapData.info.width] < 119
-                                  && globalMapData.data[ix + iy * globalMapData.info.width] < 119) 
+                                if(mapData.data[i + j * mapData.info.width] < 119 && globalMapData.data[ix + iy * globalMapData.info.width] < 119) 
                                 {
                                     if(mapData.data[i + j * mapData.info.width] != -1)
-                                               globalMapData.data[ix + iy * globalMapData.info.width]= (int)(0.96 * (double)(globalMapData.data[ix + iy * globalMapData.info.width]) + 
-                                                    0.04 * (double)(mapData.data[i + j * mapData.info.width]));
+                                        globalMapData.data[ix + iy * globalMapData.info.width] = 
+                                            (int)(0.96 * (double)(globalMapData.data[ix + iy * globalMapData.info.width]) + 
+                                            0.04 * (double)(mapData.data[i + j * mapData.info.width]));
                                 }
                                 else
                                     globalMapData.data[ix + iy * globalMapData.info.width] = 100;
@@ -220,8 +218,7 @@ int main(int argc, char** argv)
     node_handle.getParam("/exploration_map_merge/map_w", map_w);
     node_handle.getParam("/exploration_map_merge/map_h", map_h);
     node_handle.getParam("/exploration_map_merge/mapinitox", mapinitox);
-        node_handle.getParam("/exploration_map_merge/mapinitoy", mapinitoy);
-
+    node_handle.getParam("/exploration_map_merge/mapinitoy", mapinitoy);
     node_handle.getParam("/exploration_map_merge/merge_size", merge_size);
     node_handle.getParam("/exploration_map_merge/safe_obs_dis", safe_obs_dis);
     ros::Subscriber map_sub = node_handle.subscribe("/plane_OccMap", 1000, mapCallBack);
