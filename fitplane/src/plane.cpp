@@ -224,19 +224,19 @@ namespace FitPlane
         {
             for(int j = 0; j < planemap.index_num_[1]; j++)
             {
-            	if(planemap.Plane_Map_[i][j].traversability != 100)
+            if(planemap.Plane_Map_[i][j].traversability != 100)
+            {
+		for(const auto& point : planemap.Plane_Map_[i][j].plane_pts)
                 {
-		    for(const auto& point : planemap.Plane_Map_[i][j].plane_pts)
-                    {
-                    	pt.x = point(0);
-                    	pt.y = point(1);
-                	pt.z = point(2);
-                	pt.r = pt.g = pt.b = 0;
-                	pt.a = 1.0f;
+                pt.x = point(0);
+                pt.y = point(1);
+                pt.z = point(2);
+                pt.r = pt.g = pt.b = 0;
+                pt.a = 1.0f;
 
-                	surf_point.push_back(pt);        
-                    }
-            	}
+                surf_point.push_back(pt);        
+                }
+            }
             }
         }
 
