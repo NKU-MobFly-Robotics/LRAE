@@ -224,19 +224,19 @@ namespace FitPlane
         {
             for(int j = 0; j < planemap.index_num_[1]; j++)
             {
-            if(planemap.Plane_Map_[i][j].traversability != 100)
-            {
-		for(const auto& point : planemap.Plane_Map_[i][j].plane_pts)
+                if(planemap.Plane_Map_[i][j].traversability != 100)
                 {
-                pt.x = point(0);
-                pt.y = point(1);
-                pt.z = point(2);
-                pt.r = pt.g = pt.b = 0;
-                pt.a = 1.0f;
+                    for(const auto& point : planemap.Plane_Map_[i][j].plane_pts)
+                    {
+                        pt.x = point(0);
+                        pt.y = point(1);
+                        pt.z = point(2);
+                        pt.r = pt.g = pt.b = 0;
+                        pt.a = 1.0f;
 
-                surf_point.push_back(pt);        
+                        surf_point.push_back(pt);        
+                    }
                 }
-            }
             }
         }
 
@@ -414,8 +414,8 @@ namespace FitPlane
     double PlaneMap::getAngle(Eigen::Vector3d &plane_vector)
     {
         Eigen::Vector3d n1(0,0,1);
-	double cos_ = abs(n1(0) * plane_vector(0) + n1(1) * plane_vector(1) + n1(2) * plane_vector(2)) / 
-			(sqrt(n1(0) * n1(0) + n1(1) * n1(1) + n1(2) * n1(2)) * 
+	    double cos_ = abs(n1(0) * plane_vector(0) + n1(1) * plane_vector(1) + n1(2) * plane_vector(2)) / 
+			    (sqrt(n1(0) * n1(0) + n1(1) * n1(1) + n1(2) * n1(2)) * 
          		sqrt(plane_vector(0) * plane_vector(0) + plane_vector(1) * 
 	    		plane_vector(1) + plane_vector(2) * plane_vector(2)));
         double angle = std::acos(cos_);
