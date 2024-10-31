@@ -10,7 +10,7 @@ To obtain high exploration efficiency, LRAE adopts a large-region-aware explorat
 </p>
 
 
-**Video Link**: [Video on Youtube](https://youtu.be/xePDPZluLes)
+**Video Link**: [Video on Youtube](https://youtu.be/xePDPZluLes); [Video on Bilibili](https://www.bilibili.com/video/BV1g1SVYWEfw/?spm_id_from=333.999.0.0&vd_source=0e7c59dd804a18d9a9c201eafe9ac6e5)
 
 **Related Paper**: [Paper on IEEE](https://ieeexplore.ieee.org/document/10734213)
 
