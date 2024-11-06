@@ -144,7 +144,7 @@ Please follow the following steps:
 ​<param name="mapinitoy" type="double" value="-10.0" />
 ```
 3. The conditions that need to be met between parameters:
-Let the robot's initial position be the coordinate origin, the robot's orientation be the positive direction of the x-axis, and the y-axis follow the right-hand coordinate system,
+Let the robot's initial position be the coordinate origin, the robot's orientation be the positive direction of the x-axis, and the y-axis follows the right-hand coordinate system,
 	1. ​If it is necessary to define the exploration boundary, `use_ex_range` is true; otherwise, it is false;
 	2. ​`ex_robot_front` represents the farthest distance that can be explored along the positive x-axis；
 	3. ​`ex_robot_back` represents the farthest distance that can be explored along the negative x-axis；
