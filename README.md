@@ -120,7 +120,11 @@ source devel/setup.bash && roslaunch lrae_planner exploration_scene2.launch
 
 For Scene 3 and Scene 4, the method is the same as above.
 
-## Run LRAE in scenes without boundaries
+## Run LRAE in other scenes
+If there are boundaries around the scene, similar to the scenes we published:
+You need to ensure that, with the robot's initial position as the coordinate origin, the robot's orientation as the positive direction of the x-axis, and the y-axis following the right-hand coordinate system, the range of this scene in this coordinate system should be within the range of `globalMapData` determined by the four parameters `map_w`, `map_h`, `mapinitox`, and `mapinitoy` in node “exploration_map_merge”.
+
+If there are no boundaries around the scene:
 We assume that exploration problems have boundaries, otherwise exploration will continue indefinitely.
 Therefore, the scenes we publish all have walls as boundaries. If you want to explore an environment without walls (boundaries).
 Please follow the following steps:
@@ -140,17 +144,18 @@ Please follow the following steps:
 ​<param name="mapinitoy" type="double" value="-10.0" />
 ```
 3. The conditions that need to be met between parameters:
-	1. ​If it is necessary to define the exploration boundary, `use_ex_range` is true; otherwise, it is false;
-	2. ​`ex_robot_front` represents the farthest distance that can be explored along the positive x-axis of the robot；
-	3. ​`ex_robot_back` represents the farthest distance that can be explored along the negative x-axis of the robot；
-	4. ​`ex_robot_left` represents the farthest distance that can be explored along the positive y-axis of the robot;
-	5. ​`ex_robot_right` represents the farthest distance that can be explored along the negative y-axis of the robot;
-	6. ​`map_w` is greater than or equal to ((`ex_robot_front` + abs(`ex_robot_back`)) / map resolution) then **round up**         
-	7. ​`map_h` is greater than or equal to ((`ex_robot_left` + abs(`ex_robot_right`)) / map resolution) then **round up**;
-	8. ​note: map resolution has been set to 0.3 in this code repository；
-	9. ​`mapinitox` is less than or equal to `ex_robot_back`;
-	10. ​`mapinitoy` is less than or equal to `ex_robot_right`;
-	11. ​The exploration boundary range defined by the “Traversibility_mapping” node must be entirely within the range of the `globalMapData` determined by the “exploration_map_merge” node.
+Let the robot's initial position be the coordinate origin, the robot's orientation be the positive direction of the x-axis, and the y-axis follow the right-hand coordinate system,
+1. ​If it is necessary to define the exploration boundary, `use_ex_range` is true; otherwise, it is false;
+2. ​`ex_robot_front` represents the farthest distance that can be explored along the positive x-axis；
+3. ​`ex_robot_back` represents the farthest distance that can be explored along the negative x-axis；
+4. ​`ex_robot_left` represents the farthest distance that can be explored along the positive y-axis;
+5. ​`ex_robot_right` represents the farthest distance that can be explored along the negative y-axis;
+6. ​`map_w` is greater than or equal to ((`ex_robot_front` + abs(`ex_robot_back`)) / map resolution) then **round up**         
+7. ​`map_h` is greater than or equal to ((`ex_robot_left` + abs(`ex_robot_right`)) / map resolution) then **round up**;
+8. ​note: map resolution has been set to 0.3 in this code repository；
+9. ​`mapinitox` is less than or equal to `ex_robot_back`;
+10. ​`mapinitoy` is less than or equal to `ex_robot_right`;
+11. ​In conclusion, the exploration boundary range defined by the “Traversibility_mapping” node must be entirely within the range of the `globalMapData` determined by the “exploration_map_merge” node.
 
 ## Acknowledgements
 
