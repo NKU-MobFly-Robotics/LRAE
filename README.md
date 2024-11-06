@@ -145,17 +145,17 @@ Please follow the following steps:
 ```
 3. The conditions that need to be met between parameters:
 Let the robot's initial position be the coordinate origin, the robot's orientation be the positive direction of the x-axis, and the y-axis follow the right-hand coordinate system,
-1. ​If it is necessary to define the exploration boundary, `use_ex_range` is true; otherwise, it is false;
-2. ​`ex_robot_front` represents the farthest distance that can be explored along the positive x-axis；
-3. ​`ex_robot_back` represents the farthest distance that can be explored along the negative x-axis；
-4. ​`ex_robot_left` represents the farthest distance that can be explored along the positive y-axis;
-5. ​`ex_robot_right` represents the farthest distance that can be explored along the negative y-axis;
-6. ​`map_w` is greater than or equal to ((`ex_robot_front` + abs(`ex_robot_back`)) / map resolution) then **round up**         
-7. ​`map_h` is greater than or equal to ((`ex_robot_left` + abs(`ex_robot_right`)) / map resolution) then **round up**;
-8. ​note: map resolution has been set to 0.3 in this code repository；
-9. ​`mapinitox` is less than or equal to `ex_robot_back`;
-10. ​`mapinitoy` is less than or equal to `ex_robot_right`;
-11. ​In conclusion, the exploration boundary range defined by the “Traversibility_mapping” node must be entirely within the range of the `globalMapData` determined by the “exploration_map_merge” node.
+	1. ​If it is necessary to define the exploration boundary, `use_ex_range` is true; otherwise, it is false;
+	2. ​`ex_robot_front` represents the farthest distance that can be explored along the positive x-axis；
+	3. ​`ex_robot_back` represents the farthest distance that can be explored along the negative x-axis；
+	4. ​`ex_robot_left` represents the farthest distance that can be explored along the positive y-axis;
+	5. ​`ex_robot_right` represents the farthest distance that can be explored along the negative y-axis;
+	6. ​`map_w` is greater than or equal to ((`ex_robot_front` + abs(`ex_robot_back`)) / map resolution) then **round up**         
+	7. ​`map_h` is greater than or equal to ((`ex_robot_left` + abs(`ex_robot_right`)) / map resolution) then **round up**;
+	8. ​note: map resolution has been set to 0.3 in this code repository；
+	9. ​`mapinitox` is less than or equal to `ex_robot_back`;
+	10. ​`mapinitoy` is less than or equal to `ex_robot_right`;
+	11. ​In conclusion, the exploration boundary range defined by the “Traversibility_mapping” node must be entirely within the range of the `globalMapData` determined by the “exploration_map_merge” node.
 
 ## Acknowledgements
 
