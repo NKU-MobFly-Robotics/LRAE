@@ -119,6 +119,39 @@ source devel/setup.bash && roslaunch lrae_planner exploration_scene2.launch
 ```
 
 For Scene 3 and Scene 4, the method is the same as above.
+
+## Run LRAE in scenes without boundaries
+We assume that exploration problems have boundaries, otherwise exploration will continue indefinitely.
+Therefore, the scenes we publish all have walls as boundaries. If you want to explore an environment without walls (boundaries).
+Please follow the following steps:
+1. Add the following parameters to node “Traversibility_mapping”：
+```xml
+​<param name="use_ex_range" value="true"/>
+<param name="ex_robot_back" value="-10.0"/>
+​<param name="ex_robot_right" value="-10.0"/>
+​<param name="ex_robot_front" value="50.0"/>
+​<param name="ex_robot_left" value="50.0"/>
+```
+2. Modify the following parameters of the `globalMapData` in node “exploration_map_merge”：
+```xml
+​<param name="map_w" type="int" value="200" />
+​<param name="map_h" type="int" value="200" />
+​<param name="mapinitox" type="double" value="-10.0" />
+​<param name="mapinitoy" type="double" value="-10.0" />
+```
+3. The conditions that need to be met between parameters:
+	1. ​If it is necessary to define the exploration boundary, `use_ex_range` is true; otherwise, it is false;
+	2. ​`ex_robot_front` represents the farthest distance that can be explored along the positive x-axis of the robot；
+	3. ​`ex_robot_back` represents the farthest distance that can be explored along the negative x-axis of the robot；
+	4. ​`ex_robot_left` represents the farthest distance that can be explored along the positive y-axis of the robot;
+	5. ​`ex_robot_right` represents the farthest distance that can be explored along the negative y-axis of the robot;
+	6. ​`map_w` is greater than or equal to ((`ex_robot_front` + abs(`ex_robot_back`)) / map resolution) then **round up**         
+	7. ​`map_h` is greater than or equal to ((`ex_robot_left` + abs(`ex_robot_right`)) / map resolution) then **round up**;
+	8. ​note: map resolution has been set to 0.3 in this code repository；
+	9. ​`mapinitox` is less than or equal to `ex_robot_back`;
+	10. ​`mapinitoy` is less than or equal to `ex_robot_right`;
+	11. ​The exploration boundary range defined by the “Traversibility_mapping” node must be entirely within the range of the `globalMapData` determined by the “exploration_map_merge” node.
+
 ## Acknowledgements
 
 We sincerely appreciate the following open source projects: [FAEL](https://github.com/SYSU-RoboticsLab/FAEL), [TARE](https://github.com/caochao39/tare_planner), [PUTN](https://github.com/jianzhuozhuTHU/putn), and Ji Zhang's [local_planner](https://github.com/jizhang-cmu/ground_based_autonomy_basic/tree/noetic/src/local_planner).
