@@ -27,7 +27,13 @@ World::World(const float &resolution, const ros::NodeHandle& nh, const ros::Node
     nh_private_.getParam("PointCloud_Map_topic", PointCloud_Map_topic);
     nh_private_.getParam("Grid_Map_topic", Grid_Map_topic);
     nh_private_.getParam("PointCloud_topic", PointCloud_topic);
-
+    
+    nh_private_.getParam("use_ex_range", use_ex_range_);
+    nh_private_.getParam("ex_robot_back", ex_robot_back_);
+    nh_private_.getParam("ex_robot_front", ex_robot_front_);
+    nh_private_.getParam("ex_robot_right", ex_robot_right_);
+    nh_private_.getParam("ex_robot_left", ex_robot_left_);
+    
     Grid_Map_pub = nh_.advertise<sensor_msgs::PointCloud2>(Grid_Map_topic, 1);
 }
 
@@ -85,6 +91,11 @@ void World::initGridMap(const pcl::PointCloud<pcl::PointXYZ> &cloud)
     GetRobotPosition();
     for(const auto&pt:cloud.points)
     {
+        if(use_ex_range_)
+        {
+            if(pt.x < ex_robot_back_ || pt.x > ex_robot_front_ || pt.y < ex_robot_right_ || pt.y > ex_robot_left_)
+                continue;            
+        }
         if(abs(pt.x - ego_position_.x) > minrange_ || abs(pt.y - ego_position_.y) > minrange_)
             continue;
         else
