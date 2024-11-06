@@ -167,6 +167,11 @@ public:
     geometry_msgs::Point ego_position_;
     pcl::PointCloud<pcl::PointXYZ> cloud_near_;
     float minrange_ = 30.0;
+    bool use_ex_range_ = false;
+    double ex_robot_front_ = 90;
+    double ex_robot_back_ = -10;
+    double ex_robot_left_ = 90;
+    double ex_robot_right_ = -10;
     void clearMap();
 
     void GetRobotPosition()
