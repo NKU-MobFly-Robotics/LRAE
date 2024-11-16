@@ -121,10 +121,19 @@ source devel/setup.bash && roslaunch lrae_planner exploration_scene2.launch
 For Scene 3 and Scene 4, the method is the same as above.
 
 ## Run LRAE in other scenes
+
+<div style="display: flex; justify-content: center; gap: 10px;">
+	<figure>
+  		<img src="image/os.png" style="zoom:32%;" />
+    </figure>
+</div>
+
 If there are boundaries around the scene, similar to the scenes we published:
+
 You need to ensure that, with the robot's initial position as the coordinate origin, the robot's orientation as the positive direction of the x-axis, and the y-axis following the right-hand coordinate system, the range of this scene in this coordinate system should be within the range of `globalMapData` determined by the four parameters `map_w`, `map_h`, `mapinitox`, and `mapinitoy` in node “exploration_map_merge”.
 
 If there are no boundaries around the scene:
+
 We assume that exploration problems have boundaries, otherwise exploration will continue indefinitely.
 Therefore, the scenes we publish all have walls as boundaries. If you want to explore an environment without walls (boundaries).
 Please follow the following steps:
