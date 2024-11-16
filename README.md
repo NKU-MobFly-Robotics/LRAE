@@ -121,11 +121,10 @@ source devel/setup.bash && roslaunch lrae_planner exploration_scene2.launch
 For Scene 3 and Scene 4, the method is the same as above.
 
 ## Run LRAE in other scenes
-
+Schematic diagram of some parameters:
 <div style="display: flex; justify-content: center; gap: 10px;">
 	<figure>
   		<img src="image/os.png" style="zoom:10%;" />
-		<figcaption>Schematic diagram of some parameters.</figcaption>
     </figure>
 </div>
 
