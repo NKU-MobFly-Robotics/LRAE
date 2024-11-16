@@ -124,7 +124,7 @@ For Scene 3 and Scene 4, the method is the same as above.
 
 <div style="display: flex; justify-content: center; gap: 10px;">
 	<figure>
-  		<img src="image/os.png" style="zoom:32%;" />
+  		<img src="image/os.png" style="zoom:20%;" />
     </figure>
 </div>
 
