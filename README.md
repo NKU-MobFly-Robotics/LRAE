@@ -127,17 +127,12 @@ Schematic diagram of some parameters:
   		<img src="image/os.png" style="zoom:10%;" />
     </figure>
 </div>
+We assume that exploration problems have boundaries, otherwise, exploration will continue indefinitely.
+Therefore, you need first to define the exploration boundary for the robot according to the scene, then set the parameters of `globalMapData` according to the exploration boundary to ensure that the range of the exploration boundary is within the range of `globalMapData`.
 
-**If there are boundaries around the scene, similar to the scenes we published:**
-
-You need to ensure that, with the robot's initial position as the coordinate origin, the robot's orientation as the positive direction of the x-axis, and the y-axis following the right-hand coordinate system, the range of this scene in this coordinate system should be within the range of `globalMapData` determined by the four parameters `map_w`, `map_h`, `mapinitox`, and `mapinitoy` in node “exploration_map_merge”.
-
-**If there are no boundaries around the scene:**
-
-We assume that exploration problems have boundaries, otherwise exploration will continue indefinitely.
-Therefore, the scenes we publish all have walls as boundaries. If you want to explore an environment without walls (boundaries).
-Please follow the following steps:
-1. Add the following parameters to node “Traversibility_mapping”：
+**Please follow the following steps:**
+1. Let the robot's initial position be the coordinate origin, the robot's orientation be the positive direction of the x-axis, and the y-axis follows the right-hand coordinate system, the range of the exploration boundary in this coordinate system should be within the range of `globalMapData` determined by the four parameters `map_w`, `map_h`, `mapinitox`, and `mapinitoy` in node “exploration_map_merge”.
+2. Add the following parameters to node “Traversibility_mapping”：
 ```xml
 ​<param name="use_ex_range" value="true"/>
 <param name="ex_robot_back" value="-10.0"/>
@@ -145,15 +140,14 @@ Please follow the following steps:
 ​<param name="ex_robot_front" value="50.0"/>
 ​<param name="ex_robot_left" value="50.0"/>
 ```
-2. Modify the following parameters of the `globalMapData` in node “exploration_map_merge”：
+3. Modify the following parameters of the `globalMapData` in node “exploration_map_merge”：
 ```xml
 ​<param name="map_w" type="int" value="200" />
 ​<param name="map_h" type="int" value="200" />
 ​<param name="mapinitox" type="double" value="-10.0" />
 ​<param name="mapinitoy" type="double" value="-10.0" />
 ```
-3. The conditions that need to be met between parameters:
-Let the robot's initial position be the coordinate origin, the robot's orientation be the positive direction of the x-axis, and the y-axis follows the right-hand coordinate system,
+4. The conditions that need to be met between parameters:
 	1. ​If it is necessary to define the exploration boundary, `use_ex_range` is true; otherwise, it is false;
 	2. ​`ex_robot_front` represents the farthest distance that can be explored along the positive x-axis；
 	3. ​`ex_robot_back` represents the farthest distance that can be explored along the negative x-axis；
