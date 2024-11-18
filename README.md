@@ -14,7 +14,7 @@ To obtain high exploration efficiency, LRAE adopts a large-region-aware explorat
 
 **Related Paper**: [Paper on IEEE](https://ieeexplore.ieee.org/document/10734213)
 
-Q. Bi, X. Zhang, S. Zhang, R. Wang, L. Li and J. Yuan, "LRAE: Large-Region-Aware Safe and Fast Autonomous Exploration of Ground Robots for Uneven Terrains," in IEEE Robotics and Automation Letters, doi: 10.1109/LRA.2024.3486229.
+Q. Bi, X. Zhang, S. Zhang, R. Wang, L. Li and J. Yuan, "LRAE: Large-Region-Aware Safe and Fast Autonomous Exploration of Ground Robots for Uneven Terrains," in IEEE Robotics and Automation Letters, vol. 9, no. 12, pp. 11186-11193.
 
 (If it is useful to you, please cite our paper and ⭐️ our code.)
 
