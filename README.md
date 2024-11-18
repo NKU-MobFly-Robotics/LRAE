@@ -131,8 +131,8 @@ We assume that exploration problems have boundaries, otherwise, exploration will
 Therefore, you need first to define the exploration boundary for the robot according to the scene, then set the parameters of `globalMapData` according to the exploration boundary to ensure that the range of the exploration boundary is within the range of `globalMapData`.
 
 **Please follow the following steps:**
-1. Let the robot's initial position be the coordinate origin, the robot's orientation be the positive direction of the x-axis, and the y-axis follows the right-hand coordinate system, the range of the exploration boundary in this coordinate system should be within the range of `globalMapData` determined by the four parameters `map_w`, `map_h`, `mapinitox`, and `mapinitoy` in node “exploration_map_merge”.
-2. Add the following parameters to node “Traversibility_mapping”：
+Let the robot's initial position be the coordinate origin, the robot's orientation be the positive direction of the x-axis, and the y-axis follows the right-hand coordinate system, the range of the exploration boundary in this coordinate system should be within the range of `globalMapData` determined by the four parameters `map_w`, `map_h`, `mapinitox`, and `mapinitoy` in node “exploration_map_merge”:
+1. Add the following parameters to node “Traversibility_mapping”：
 ```xml
 ​<param name="use_ex_range" value="true"/>
 <param name="ex_robot_back" value="-10.0"/>
@@ -140,14 +140,14 @@ Therefore, you need first to define the exploration boundary for the robot accor
 ​<param name="ex_robot_front" value="50.0"/>
 ​<param name="ex_robot_left" value="50.0"/>
 ```
-3. Modify the following parameters of the `globalMapData` in node “exploration_map_merge”：
+2. Modify the following parameters of the `globalMapData` in node “exploration_map_merge”：
 ```xml
 ​<param name="map_w" type="int" value="200" />
 ​<param name="map_h" type="int" value="200" />
 ​<param name="mapinitox" type="double" value="-10.0" />
 ​<param name="mapinitoy" type="double" value="-10.0" />
 ```
-4. The conditions that need to be met between parameters:
+3. The conditions that need to be met between parameters:
 	1. ​If it is necessary to define the exploration boundary, `use_ex_range` is true; otherwise, it is false;
 	2. ​`ex_robot_front` represents the farthest distance that can be explored along the positive x-axis；
 	3. ​`ex_robot_back` represents the farthest distance that can be explored along the negative x-axis；
