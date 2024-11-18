@@ -130,6 +130,7 @@ Schematic diagram of some parameters:
 We assume that exploration problems have boundaries, otherwise, exploration will continue indefinitely.
 Therefore, you need first to define the exploration boundary for the robot according to the scene, then set the parameters of the `globalMapData` according to the exploration boundary to ensure that the range of the exploration boundary is within the range of the `globalMapData`.
 
+
 **Please follow the following steps:**
 
 Let the robot's initial position be the coordinate origin, the robot's orientation be the positive direction of the x-axis, and the y-axis follows the right-hand coordinate system, the range of the exploration boundary in this coordinate system should be within the range of `globalMapData` determined by the four parameters `map_w`, `map_h`, `mapinitox`, and `mapinitoy` in node “exploration_map_merge”:
