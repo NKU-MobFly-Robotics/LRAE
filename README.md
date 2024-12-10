@@ -78,6 +78,7 @@ catkin_make
    ```bash
    sudo apt-get install ros-noetic-ros-controllers ros-noetic-ros-control
    ```
+5. **Some common issues can also be referred to on the "Issues" page.**
 
 ## Run LRAE in simulation
 
