@@ -34,7 +34,7 @@ ros-noetic-joint-state-controller* \
 ros-noetic-velocity-controllers* 
 ```
 
-2. In addition, we recommend that you download [gazebo_models](https://github.com/osrf/gazebo_models) to the directory `~/.gazebo/models`.
+2. In addition, we recommend that you download [gazebo_models](https://github.com/osrf/gazebo_models) and [Supplementary Gazebo Models for LRAE](https://github.com/qingchen-bi/Supplementary-Gazebo-Models-for-LRAE) to the directory `~/.gazebo/models`.
 
 ## Build LRAE
 Then simply clone and compile our package:
