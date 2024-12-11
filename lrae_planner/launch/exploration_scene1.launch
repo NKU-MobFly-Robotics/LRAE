@@ -14,7 +14,10 @@
   <node name="lrae_planner_node" pkg="lrae_planner" type="lrae_planner_node" output="screen">
     <param name="angle_pen" type="double" value  ="0.45" />
     <param name="update_cen_thre" type="int" value="6" />
-    <param name="unknown_num_thre" type="int" value  ="100" />
+    <!-- When the number of unknown grids in a subregion is lower than this threshold, it will not be considered for exploration -->
+    <!-- 100: Pursue high coverage; 200: Pursue high efficiency -->
+    <!-- <param name="unknown_num_thre" type="int" value  ="100" /> -->
+    <param name="unknown_num_thre" type="int" value  ="200" />
     <param name="minrange" type="double" value="20.0" />
     <param name="limit_max_square" type="bool" value  ="false" />
     <param name="use_go_end_nearest" type="bool" value="false" />
