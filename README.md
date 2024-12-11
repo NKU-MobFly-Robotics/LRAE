@@ -128,6 +128,7 @@ Schematic diagram of some parameters:
   		<img src="image/os.png" style="zoom:10%;" />
     </figure>
 </div>
+
 We assume that exploration problems have boundaries, otherwise, exploration will continue indefinitely.
 Therefore, you need first to define the exploration boundary for the robot according to the scene, then set the parameters of the `globalMapData` according to the exploration boundary to ensure that the range of the exploration boundary is within the range of the `globalMapData`.
 
@@ -162,6 +163,26 @@ Let the robot's initial position be the coordinate origin, the robot's orientati
 	9. ​`mapinitox` is less than or equal to `ex_robot_back`;
 	10. ​`mapinitoy` is less than or equal to `ex_robot_right`;
 	11. ​In conclusion, the exploration boundary range defined by the “Traversibility_mapping” node must be entirely within the range of the `globalMapData` determined by the “exploration_map_merge” node.
+
+## Main Parameters
+Main parameters affecting terrain traversability analysis:
+```C++
+float max_angle_ = 40.0;
+float max_flatness_ = 0.01;
+float w1_ = 0.8;
+```
+Main parameters affecting exploration performance:
+```xml
+<param name="angle_pen" type="double" value ="0.45" />
+<param name="update_cen_thre" type="int" value="6" />
+<param name="unknown_num_thre" type="int" value ="200" />
+<param name="minrange" type="double" value="20.0" />
+<param name="limit_max_square" type="bool" value ="true" />
+<param name="use_go_end_nearest" type="bool" value="true" />
+<param name="end_neacen_disthre" type="double" value ="10.0" />
+<param name="end_cur_disrate" type="double" value="2.0" />
+```
+If the robot ends up exploring some tiny unknown region back and forth, please increase the `unknown_num_thre` parameter appropriately.
 
 ## Acknowledgements
 
