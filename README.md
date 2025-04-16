@@ -18,6 +18,8 @@ Q. Bi, X. Zhang, S. Zhang, R. Wang, L. Li and J. Yuan, "LRAE: Large-Region-Aware
 
 (If it is useful to you, please cite our paper and ⭐️ our code.)
 
+**Other Links**: [multi-robot exploration code CURE1](https://github.com/NKU-MobFly-Robotics/CURE1)
+
 ## Prerequisites
 
 1. LRAE has been tested on __Ubuntu 20.04 with ROS Noetic__, please run the following commands to install required dependencies or tools:
