@@ -184,7 +184,8 @@ Main parameters affecting exploration performance:
 <param name="end_neacen_disthre" type="double" value ="10.0" />
 <param name="end_cur_disrate" type="double" value="2.0" />
 ```
-If the robot ends up exploring some tiny unknown regions back and forth, please increase the `unknown_num_thre` parameter appropriately.
+If the robot ends up exploring some tiny unknown regions back and forth, please increase the `unknown_num_thre` parameter appropriately. 
+Remark: Since the Real Time Factor in Gazebo is not always equal to 1, please use the ros::Time class to measure the exploration time instead of using the actual wall-clock time.
 
 ## Acknowledgements
 
