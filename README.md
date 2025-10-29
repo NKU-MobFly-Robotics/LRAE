@@ -184,8 +184,10 @@ Main parameters affecting exploration performance:
 <param name="end_neacen_disthre" type="double" value ="10.0" />
 <param name="end_cur_disrate" type="double" value="2.0" />
 ```
-If the robot ends up exploring some tiny unknown regions back and forth, please increase the `unknown_num_thre` parameter appropriately. 
-Remark: Since the Real Time Factor in Gazebo is not always equal to 1, please use the ros::Time class to measure the exploration time instead of using the actual wall-clock time.
+## Remark
+1. If the robot ends up exploring some tiny unknown regions back and forth, please increase the `unknown_num_thre` parameter appropriately. 
+2. Since the Real Time Factor in Gazebo is not always equal to 1, please use the ros::Time class to measure the exploration time instead of using the actual wall-clock time.
+3. The exploration performance depends on the accuracy of traversability analysis and localization. If the exploration is incomplete, please ensure accurate localization and adjust the traversability analysis parameters to suit the corresponding terrain. (The algorithm is mainly designed for continuous undulating rough terrain and has not been tested on discrete terrains such as cliffs or steps.) It is recommended to first check whether the traversability map is constructed correctly.
 
 ## Acknowledgements
 
