@@ -22,7 +22,7 @@ Q. Bi, X. Zhang, S. Zhang, R. Wang, L. Li and J. Yuan, "LRAE: Large-Region-Aware
 
 **News**: 
 
-[Real-world Experiment using Fast-LIO and Livox-MID360](https://github.com/NKU-MobFly-Robotics/LRAE/issues/20)
+1. A simple guideline is provided for [Real-world Experiment using Fast-LIO and Livox-MID360](https://github.com/NKU-MobFly-Robotics/LRAE/issues/20)
 
 ## Prerequisites
 
