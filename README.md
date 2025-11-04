@@ -19,6 +19,8 @@ Q. Bi, X. Zhang, S. Zhang, R. Wang, L. Li and J. Yuan, "LRAE: Large-Region-Aware
 (If it is useful to you, please cite our paper and ⭐️ our code.)
 
 **Other Links**: [multi-robot exploration code CURE1](https://github.com/NKU-MobFly-Robotics/CURE1)
+**News**: 
+[Real-world Experiment using Fast-LIO and Livox-MID360]
 
 ## Prerequisites
 
