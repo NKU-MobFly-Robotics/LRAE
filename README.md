@@ -18,7 +18,8 @@ Q. Bi, X. Zhang, S. Zhang, R. Wang, L. Li and J. Yuan, "LRAE: Large-Region-Aware
 
 (If it is useful to you, please cite our paper and ⭐️ our code.)
 
-**Other Links**: [multi-robot exploration code CURE1](https://github.com/NKU-MobFly-Robotics/CURE1)
+**Other Links**: [T-RO 2026 An improved version of LRAE with enhanced performance and multi-robot exploration capability.](https://github.com/NKU-MobFly-Robotics/URGE); 
+[multi-robot exploration code CURE1](https://github.com/NKU-MobFly-Robotics/CURE1)
 
 **News**: 
 
